@@ -1,0 +1,35 @@
+Results
+
+Part B)
+CNN MNIST Accuracy with dropout = Test Accuracy 99.23% 
+CNN MNIST Accuracy without dropout = Test accuracy 99.05%
+
+
+Part C)
+
+#Same number of layers, different dropout rates for max 3hrs
+Deep CNN CIFAR10 Accuracy with dropout (0.45), layers(H1 = 10, H2 = 100), epoch(895)  
+= Test Accuracy %62.209997
+
+Deep CNN CIFAR10 Accuracy with dropout (0.5), layers(H1 = 10, H2 = 100), epoch(895)  
+= Test Accuracy % 74.009998
+
+Deep CNN CIFAR10 Accuracy with dropout (0.55), layers(H1 = 10, H2 = 100), epoch(895)  
+= Test Accuracy %77.559998 
+
+#Same dropout, different number of layers for max 3hrs
+Deep CNN CIFAR10 Accuracy with dropout (0.55), layers(H1 = 15, H2 = 100), step(897)  
+= Test Accuracy % 82.459999
+
+Deep CNN CIFAR10 Accuracy with dropout (0.55), layers(H1 = 15, H2 = 200), step(897)  
+= Test Accuracy % 82.809999
+
+Deep CNN CIFAR10 Accuracy with dropout (0.55), layers(H1 = 20, H2 = 200), step(897)  
+= Test Accuracy % 83.609999
+
+# Best Model after 3 hours without data augmentation
+Deep CNN CIFAR10 Accuracy with dropout (0.55), layers(H1 = 20, H2 = 200), step(999)  
+= Test Accuracy %83.679999 
+
+# Best Model after 3 hours trained for 6 hours with data augmentation
+Deep CNN CIFAR10 Accuracy with dropout (0.55), layers(H1 = 20, H2 = 200), step(iteration:220520)  = Test Accuracy % 76.5625
