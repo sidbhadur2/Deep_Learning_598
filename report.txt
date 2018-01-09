@@ -1,0 +1,31 @@
+The pictures for the 4 visualization parts for both the pretrained model and the GAN trained model have been attached along in the directory. 
+Both the pre-trained model and the model trained by the GAN are run for 700 and 500 iterations respectively. 
+
+
+There are 5 images created namely: 'gradient.png', 'X.png', 'X_alternate.png', 'classes.png' and 'features.png' for both the models. They are separated into two directories: one called Trained_500, and the other called Pre_Trained_700(referring to the NO_GAN model).
+
+
+Gradient - The gradient created is based on the alternative label as seen from the lines:
+gradient = sess.run(grad_loss_over_X, 
+    feed_dict={X:X_batch, y: y_batch_alternate, keep_prob:1.0, is_train:False})
+
+The gradient is scaled from −1 to 1 and plotted as an image.
+
+X - The original image is scaled from 0 to 255 to −1 to 1 meaning we have a resolution of 0.0078.
+
+X_alternate - For this we modify the image by 10 in the opposite direction of the gradient for each pixel as shown by the code lines:
+			  X_batch_modified = X_batch - 10.0*0.007843137*gradient
+
+Classes  - These are the High Activation Images for Output Layer. This is for calculating a fake image with a high output for each class.
+Features - These are High Activation Image for Intermediate Features. This is for calculating a fake image with a high output for the first 64 features of the layer before the output. 
+
+Description of Code for calculating the high activation images:
+
+High Activation Images for Output Layer
+For this part, the code has a test set of images and it gets the average from that set and modifies them using the gradient. The gradient was computed before and takes the previous average batch and this was repeated 10 times for the 10 classes. As a result, there is one feature per image, (1st feature for the 1st image, 2nd for the 2nd image ...etc). The gradient calculated is the gradient per feature for some input feature for some input. This code is repeated for 700 iterations for the no_GAN model. There are also some hyperparameters that are the learning rate and weight decay.  
+
+High Activation Image for Intermediate Features
+As before, this high activation code has very similar computations trained for 700 iterations for the no_GAN model. For each feature we now have 64 gradients per feature before the output layer. Thus, there are more features than before.   
+
+Also attached is an animated gif of the saved images fron the generator called 'Generator.gif'
+
