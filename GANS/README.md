@@ -3,4 +3,4 @@
 Paper: https://arxiv.org/pdf/1406.2661.pdf
 
 Gif generated:
-!(Generator.gif)
+!(https://media.githubusercontent.com/media/sidbhadur2/Deep_Learning_598/GANS/Generator.gif)
